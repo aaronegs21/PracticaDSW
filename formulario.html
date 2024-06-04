@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="formulario.css">
+  <link rel="shortcut icon" href="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="caja">
+    <header>
+    </header>
+    <h3>Formulario</h3>
+    <table cellspacing="10" cellpadding="2">
+      <form class="formulario" onsubmit="return validacion()" action="php/capturaBD.php" method="post" id="formulario">
+        <tr>
+          <td>Nombres:</td>
+          <td>Apellidos:</td>
+        </tr>
+        <tr>
+          <td><input type="text" id="nombres" name="nombres" onkeyup="mayusculas(this)" onkeypress="return soloLetras(event)"></td>
+          <td><input type="text" id="apellidos" name="apellidos" onkeyup="mayusculas(this)" onkeypress="return soloLetras(event)"></td>
+        </tr>
+        <tr>
+          <td>Edad:</td>
+          <td>Sexo:</td>
+        </tr>
+        <tr>
+          <td><input type="text" id="edad" name="edad" maxlength="2" onkeypress="return valideKey(event);"></td>
+          <td><select class="sexo" id="sexo" name="sexo">
+            <option value="1" disabled selected value>Elige una opcion:</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td>Ciudad:</td>
+          <td>Celular: (10 digitos)</td>
+        </tr>
+        <tr>
+          <td><select class="ciudad" name="ciudad" id="ciudad" onchange="habilitar()">
+            <option value="1" disabled selected value>Elige una ciudad:</option>
+            <option value="Tijuana">Tijuana</option>
+            <option value="Tecate">Tecate</option>
+            <option value="Rosarito">Rosarito</option>
+            <option value="Mexicali">Mexicali</option>
+            <option value="Ensenada">Ensenada</option>
+          </select></td>
+          <td><input type="text" name="celular" id="celular" maxlength="10" value="" onkeypress="return valideKey(event);"></td>
+        </tr>
+        <tr>
+          <td>Transporte:</td>
+          <td>Comentarios:</td>
+        </tr>
+        <tr>
+          <td><select class="transporte" name="transporte" id="transporte" >
+            <option value="1" disabled selected value>Elige una opcion:</option>
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+          </select></td>
+          <td rowspan="3"><textarea value="" name="comentarios" rows="8" cols="21" onkeyup="mayusculas(this)"></textarea></td>
+        </tr>
+        <tr>
+          <td>¿Camisa?:</td>
+        </tr>
+        <tr>
+          <td><select class="camisa" name="camisa" id="camisa" >
+            <option value="1" disabled selected value>Elige una opcion:</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" name="enviar" value="Enviar" id="boton"></td>
+        </tr>
+      </form>
+    </table>
+  </div>
+  <script type="text/javascript" src="formulario.js"></script>
+</body>
+</html>
